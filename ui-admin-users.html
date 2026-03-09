@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usuarios – MedSchedule</title>
+</head>
+<script type="module" src="/@vite/client"></script>
+<script type="module" src="/resources/js/app.js"></script>
+<body>
+  <!-- Navbar mínima para navegación -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <div class="container">
+      /index.htmlMedSchedule</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse show">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item">/ui-login.htmlLogin</a></li>
+          <li class="nav-item">/ui-about.htmlAbout</a></li>
+          <li class="nav-item">/ui-admin-dashboard.htmlDashboard</a></li>
+          <li class="nav-item">/ui-admin-users.htmlUsuarios</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <!-- Encabezado y acciones -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+      <h1 class="h4 m-0">Usuarios</h1>
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#userModal">
+          + Nuevo usuario
+        </button>
+      </div>
+    </div>
+
+    <!-- Filtros y búsqueda -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <form class="row g-2 align-items-center">
+          <div class="col-12 col-sm-6 col-md-3">
+            <label class="form-label small mb-1">Rol</label>
+            <select class="form-select form-select-sm">
+              <option value="">Todos</option>
+              <option value="admin">Administrador</option>
+              <option value="doctor">Doctor</option>
+              <option value="paciente">Paciente</option>
+            </select>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <label class="form-label small mb-1">Estado</label>
+            <select class="form-select form-select-sm">
+              <option value="">Todos</option>
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label small mb-1">Buscar</label>
+            <div class="input-group input-group-sm">
+              <span class="input-group-text">Nombre/Correo</span>
+              <input type="text" class="form-control" placeholder="Ej. ulises, jose@correo.com" />
+              <button class="btn btn-outline-secondary" type="button">Buscar</button>
+              <button class="btn btn-outline-secondary" type="button">Limpiar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tabla de usuarios -->
+    <div class="card shadow-sm">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover table-sm align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Fecha alta</th>
+                <th class="text-end">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ulises Castro</td>
+                <td>ulises@example.com</td>
+                <td><span class="badge text-bg-dark">Administrador</span></td>
+                <td><span class="badge text-bg-success">Activo</span></td>
+                <td>2026-02-15</td>
+                <td class="text-end">
+                  <div class="btn-group btn-group-sm">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#userModal">Editar</button>
+                    <button class="btn btn-outline-secondary">Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Jose Ortega</td>
+                <td>jose@example.com</td>
+                <td><span class="badge text-bg-primary">Doctor</span></td>
+                <td><span class="badge text-bg-success">Activo</span></td>
+                <td>2026-02-10</td>
+                <td class="text-end">
+                  <div class="btn-group btn-group-sm">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#userModal">Editar</button>
+                    <button class="btn btn-outline-secondary">Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>María López</td>
+                <td>maria@example.com</td>
+                <td><span class="badge text-bg-info">Paciente</span></td>
+                <td><span class="badge text-bg-secondary">Inactivo</span></td>
+                <td>2026-01-25</td>
+                <td class="text-end">
+                  <div class="btn-group btn-group-sm">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#userModal">Editar</button>
+                    <button class="btn btn-outline-success">Activar</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- ... más filas mock si quieres -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card-footer d-flex justify-content-between align-items-center">
+        <span class="small text-muted">Mostrando 3 de 120</span>
+        <ul class="pagination pagination-sm m-0">
+          <li class="page-item disabled">/ui-admin-users.htmlAnterior</a></li>
+          <li class="page-item active">/ui-admin-users.html1</a></li>
+          <li class="page-item">/ui-admin-users.html2</a></li>
+          <li class="page-item">/ui-admin-users.html3</a></li>
+          <li class="page-item">/ui-admin-users.htmlSiguiente</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Crear/Editar usuario -->
+  <div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title">Crear/Editar usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-2">
+              <div class="col-12 col-md-6">
+                <label class="form-label small">Nombre</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre" required />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label small">Apellidos</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Apellidos" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label small">Correo (no editable)</label>
+                <input type="email" class="form-control form-control-sm" placeholder="correo@dominio.com" disabled />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label small">Rol</label>
+                <select class="form-select form-select-sm" required>
+                  <option value="admin">Administrador</option>
+                  <option value="doctor">Doctor</option>
+                  <option value="paciente">Paciente</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label small">Estado</label>
+                <select class="form-select form-select-sm" required>
+                  <option value="activo">Activo</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label small">Teléfono</label>
+                <input type="tel" class="form-control form-control-sm" placeholder="(xxx) xxx-xxxx" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary btn-sm" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de Vite -->
+  /@vite/client</script>
+  /resources/js/app.js</script>
+</body>
+</html>
+``
