@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login – MedSchedule</title>
+</head>
+<body>
+  <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="card shadow-sm" style="max-width: 420px; width: 100%;">
+      <div class="card-body p-4">
+        <h1 class="h4 text-center mb-3">Iniciar sesión</h1>
+        <p class="text-center text-muted mb-4">Accede a tu cuenta</p>
+
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="usuario@correo.com" required />
+          </div>
+
+          <div class="mb-2">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="••••••••" required />
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remember" />
+              <label class="form-check-label" for="remember">Recordarme</label>
+            </div>
+            <a href="#" class="small">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>
+
+        <hr class="my-4" />
+        <p class="text-center text-muted small mb-0">
+          ¿No tienes cuenta? <a href="#">Contacta al administrador</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cliente de Vite (ayuda a resolver módulos/recarga en caliente) -->
+  <script type="module" src="/@vite/client"></script>
+  <!-- Tu entrada: importa SCSS + Bootstrap + Alpine -->
+  <script type="module" src="/resources/js/app.js"></script>
+  <!-- Si por alguna razón la absoluta no carga, prueba la relativa:
+  <script type="module" src="./resources/js/app.js"></script>
+  -->
+</body>
+</html>
+``
