@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>@yield('title','MedSchedule')</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MedSchedule</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/ui-login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/ui-about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <main class="container py-4">
+    <!-- aquí va el contenido específico de cada página -->
+    <div id="page-slot"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-top py-3">
+    <div class="container small text-muted d-flex justify-content-between">
+      <span>© 2026 MedSchedule</span>
+      <span>MIT License</span>
+    </div>
+  </footer>
+
+  <!-- Entrada Vite -->
+  /resources/js/app.js"></script>
+</body>
+</html>
+``
